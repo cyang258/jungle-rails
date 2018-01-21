@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html' charset='utf-8' http-equiv='Content-Type' />
+</head>
+<body>
+  <h1>You order was successfully placed</h1>
+  <p>Hello Jungler,</p><br />
+  <p>Congratulations on your purchase! Your order receipt can be seen below</p><br />
+  <p>----------------------------------------------------------------------</p>
+  <div>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @cart_total = 0 %>
+        <% @order.line_items.each do |item| %>
+          <% item_total = item.product.price * item.quantity %>
+          <% @cart_total += item_total %>
+
+          <tr>
+            <td>
+              <h4><%= item.product.name %></h4>
+            </td>
+            <td>
+              <%= item.product.price %>
+            </td>
+            <td>
+              <%= item.quantity %>
+            </td>
+            <td>
+              <%= item_total %>
+            </td>
+          </tr>
+
+        <% end %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>
+            TOTAL:
+          </th>
+          <th>
+            <%= @cart_total %>
+          </th>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <h3>What's Next</h3>
+  <p>There are always more for you to explore in Jungle. We wish you enjoy the <strong>'Jungle'</strong> experience with us and looking forward to see you again in very soon future</p>
+
+</body>
+</html>
