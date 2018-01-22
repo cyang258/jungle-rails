@@ -132,5 +132,19 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+puts "Creating Reviews...."
+
+Review.destroy_all
+
+Review.create({product_id: 3, user_id: 1, rating:4, description: Faker::Hipster.paragraph(1)})
+Review.create({product_id: 4, user_id: 1, rating:4, description: Faker::Hipster.paragraph(1)})
+Review.create({product_id: 5, user_id: 1, rating:5, description: Faker::Hipster.paragraph(1)})
+Review.create({product_id: 5, user_id: 1, rating:5, description: Faker::Hipster.paragraph(1)})
+Review.create({product_id: 3, user_id: 1, rating:5, description: Faker::Hipster.paragraph(1)})
+Review.create({product_id: 3, user_id: 2, rating:2, description: Faker::Hipster.paragraph(1)})
+Review.create({product_id: 1, user_id: 2, rating:5, description: Faker::Hipster.paragraph(1)})
+Review.create({product_id: 7, user_id: 2, rating:1, description: Faker::Hipster.paragraph(1)})
+Review.create({product_id: 8, user_id: 2, rating:5, description: Faker::Hipster.paragraph(1)})
+Review.create({product_id: 9, user_id: 2, rating:4, description: Faker::Hipster.paragraph(1)})
 
 puts "DONE!"

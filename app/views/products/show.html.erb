@@ -26,6 +26,37 @@
       </div>
     </div>
 
+
+      <%if @user %>
+        <div class="comment_box">
+          <h3>Leave your comment about this product</h3>
+          <%= form_for [@product, @review ] do |form| %>
+            Description: <%= form.text_area :description %><br/>
+            Rating: <%= form.select :rating, options_for_select([*1..5]) %>
+            <%= form.submit %>
+          <% end %>
+        </div>
+      <% end %>
+
+
+    <div class='panel-group'>
+      <% @product.reviews.reverse_each do |review| %>
+        <div class='panel panel-primary'>
+          <div class='panel-heading'>
+            <h4>User: <%= review.user.first_name %>  commented: </h4>
+          </div>
+          <div class='panel-body'>
+            <p> <%= review.description %> </p>
+          </div>
+          <div class='panel-footer'>
+            <p> Rating: <%= review.rating %> (From 1 to 5)</p>
+            <% if review.user == @user %>
+              <button class='btn btn-danger'><%= link_to "Delete", product_review_path(@product, review), method: :delete, data: {confirm: "Are you sure you want to delete this ?"} %></button>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </article>
 
 </section>
