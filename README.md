@@ -28,6 +28,10 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Stripe
 
 ## Final Product
-
+!["Screenshot of Admin_control_page"](https://github.com/cyang258/jungle-rails/blob/master/docs/Admin_control_page.png)
+!["Screenshot of Checkout_page"](https://github.com/cyang258/jungle-rails/blob/master/docs/Checkout_page.png)
+!["Screenshot of Jungle_home_page"](https://github.com/cyang258/jungle-rails/blob/master/docs/Jungle_home_page.png)
+!["Screenshot of Order_comfirmation"](https://github.com/cyang258/jungle-rails/blob/master/docs/Order_comfirmation.png)
+!["Screenshot of Product_sorted_by_categories"](https://github.com/cyang258/jungle-rails/blob/master/docs/Product_sorted_by_categories.png)
 
 
