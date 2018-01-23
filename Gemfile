@@ -61,6 +61,8 @@ group :production do
 end
 
 group :test do
+  gem 'capybara'
+  gem 'poltergeist'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
